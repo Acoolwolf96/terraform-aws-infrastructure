@@ -79,13 +79,13 @@ terraform destroy
 
 
 ## Key Concepts
-**Variables** — values defined once and reused across the configuration, making the infrastructure easy to modify and environment-agnostic.
+**Variables**: values defined once and reused across the configuration, making the infrastructure easy to modify and environment-agnostic.
 
-**Outputs** — values printed after apply (server IP, DNS) so you never need to log into the AWS console to find resource details.
+**Outputs**: values printed after apply (server IP, DNS) so you never need to log into the AWS console to find resource details.
 
-**user_data** — a bootstrap script that runs automatically when the EC2 instance first boots, installing and configuring software without any manual intervention.
+**user_data**: a bootstrap script that runs automatically when the EC2 instance first boots, installing and configuring software without any manual intervention.
 
-**State file** — Terraform tracks everything it creates in a state file, allowing it to detect changes and only update what has actually changed on subsequent applies.
+**State file**: Terraform tracks everything it creates in a state file, allowing it to detect changes and only update what has actually changed on subsequent applies.
 
 ---
 
