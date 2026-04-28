@@ -1,4 +1,4 @@
-\# Cloud Infrastructure with Terraform on AWS
+# Cloud Infrastructure with Terraform on AWS
 
 
 
@@ -12,82 +12,62 @@ the AWS console.
 
 
 
-\---
-
-
-
-\## Infrastructure Overview
-
-Terraform (IaC)
-
-↓
-
-AWS Cloud
-
-├── VPC — isolated private network
-
-│   ├── Subnet — segmented network space
-
-│   ├── Internet Gateway — public internet access
-
-│   └── Route Table — traffic routing rules
-
-├── Security Group — firewall rules (inbound/outbound)
-
-└── EC2 Instance (Ubuntu Server 24.04)
-
-└── nginx — serves the web application
-
-└── Bootstrapped automatically via user\_data script
 ---
 
 
 
-\## What This Demonstrates
+## Infrastructure Overview
+
+Terraform (IaC)  →  AWS Cloud  →  VPC  →  Subnet  →  Internet Gateway  →  Route Table  →  Security Group  →  EC2 Instance (Ubuntu 24.04)  →  nginx  →  Bootstrapped via user_data
+---
 
 
 
-\- Infrastructure defined entirely as code — no manual console clicks
-
-\- Full network stack provisioned from scratch (VPC, subnet, routing, firewall)
-
-\- Automated server configuration on boot using user\_data scripts
-
-\- Environment-agnostic configuration using Terraform variables
-
-\- Complete infrastructure lifecycle management — provision, update, destroy
+## What This Demonstrates
 
 
 
-\---
+- Infrastructure defined entirely as code — no manual console clicks
+
+- Full network stack provisioned from scratch (VPC, subnet, routing, firewall)
+
+- Automated server configuration on boot using user\_data scripts
+
+- Environment-agnostic configuration using Terraform variables
+
+- Complete infrastructure lifecycle management — provision, update, destroy
 
 
 
-\## Core Terraform Commands
+---
+
+
+
+## Core Terraform Commands
 
 
 
 ```bash
 
-\# Initialise — download provider plugins
+# Initialise — download provider plugins
 
 terraform init
 
 
 
-\# Preview — show what will be created
+# Preview — show what will be created
 
 terraform plan
 
 
 
-\# Deploy — provision all resources on AWS
+# Deploy — provision all resources on AWS
 
 terraform apply
 
 
 
-\# Destroy — tear down all resources
+# Destroy — tear down all resources
 
 terraform destroy
 
@@ -95,53 +75,24 @@ terraform destroy
 
 
 
-\---
+---
+
+
+## Key Concepts
+**Variables** — values defined once and reused across the configuration, making the infrastructure easy to modify and environment-agnostic.
+
+**Outputs** — values printed after apply (server IP, DNS) so you never need to log into the AWS console to find resource details.
+
+**user_data** — a bootstrap script that runs automatically when the EC2 instance first boots, installing and configuring software without any manual intervention.
+
+**State file** — Terraform tracks everything it creates in a state file, allowing it to detect changes and only update what has actually changed on subsequent applies.
+
+---
 
 
 
-\## Key Concepts
-
-
-
-\*\*Variables\*\* — values defined once and reused across the configuration,
-
-making the infrastructure easy to modify and environment-agnostic.
-
-
-
-\*\*Outputs\*\* — values printed after apply (server IP, DNS) so you never
-
-need to log into the AWS console to find resource details.
-
-
-
-\*\*user\_data\*\* — a bootstrap script that runs automatically when the EC2
-
-instance first boots, installing and configuring software without any
-
-manual intervention.
-
-
-
-\*\*State file\*\* — Terraform tracks everything it creates in a state file,
-
-allowing it to detect changes and only update what has actually changed
-
-on subsequent applies.
-
-
-
-\---
-
-
-
-\## Tools \& Technologies
-
-
-
-Terraform · AWS EC2 · AWS VPC · AWS Security Groups · AWS CLI ·
-
-Infrastructure as Code · Ubuntu Server · nginx
+## Tools & Technologies
+Terraform · AWS EC2 · AWS VPC · AWS Security Groups · AWS CLI · Infrastructure as Code · Ubuntu Server · nginx
 
 
 
