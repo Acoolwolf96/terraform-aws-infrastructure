@@ -1,0 +1,8 @@
+# Terraform state files — never commit these
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+
+# AWS credentials
+*.pem
